@@ -1,0 +1,285 @@
+{
+  "data": {
+    "getMonitors": [
+      {
+        "uuid": "135d8ac0-b70b-4747-8a8b-a8aa9a32ff92",
+        "target": {
+          "uuid": "3b545cd6-3fea-45cd-aeb6-178653141543",
+          "dwId": "fe164ca3-1b7f-4c77-b1ba-e802c44eba69",
+          "connectionUuid": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
+          "timeout": null,
+          "whereCondition": null,
+          "segments": null,
+          "dataSource": {
+            "connectionType": "athena",
+            "type": "TABLE",
+            "mcon": "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
+            "schema": {
+              "fields": [
+                {
+                  "name": "value",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "year",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "month",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "day",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "hour",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "minute",
+                  "mainType": "TEXT",
+                  "type": "string",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                }
+              ],
+              "__typename": "DataSourceSchema"
+            },
+            "__typename": "DataSourceInputTable"
+          },
+          "__typename": "ExtendedDataSource"
+        },
+        "source": null,
+        "dataSource": {
+          "uuid": "3b545cd6-3fea-45cd-aeb6-178653141543",
+          "connectionUuid": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
+          "customSql": null,
+          "transforms": [],
+          "schema": {
+            "fields": [
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "value",
+                "nested": false,
+                "sqlName": "value",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "year",
+                "nested": false,
+                "sqlName": "year",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "month",
+                "nested": false,
+                "sqlName": "month",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "day",
+                "nested": false,
+                "sqlName": "day",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "hour",
+                "nested": false,
+                "sqlName": "hour",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "TEXT",
+                "mode": "NULLABLE",
+                "name": "minute",
+                "nested": false,
+                "sqlName": "minute",
+                "type": "string",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              }
+            ],
+            "__typename": "DataSourceSchema"
+          },
+          "tables": [
+            {
+              "mcon": "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
+              "fullTableId": "awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
+              "__typename": "WarehouseTable"
+            }
+          ],
+          "type": "TABLE",
+          "__typename": "MonitorDataSource"
+        },
+        "entities": [
+          "awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces"
+        ],
+        "entityMcons": [
+          "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces"
+        ],
+        "agentMcon": null,
+        "assignedAssetMcons": null,
+        "unassignedAssetMcons": null,
+        "monitorType": "AGENT_TRAJECTORY",
+        "customSqlRuleType": null,
+        "consolidatedMonitorStatus": "ENABLED",
+        "breached": "NOT_BREACHED",
+        "monitorFields": null,
+        "timeBucketed": false,
+        "monitorTimeAxisFieldName": null,
+        "monitorTimeAxisFieldType": null,
+        "monitorTimeAxisTimezone": null,
+        "resourceId": "fe164ca3-1b7f-4c77-b1ba-e802c44eba69",
+        "creatorId": "epost+demo@montecarlodata.com",
+        "updaterId": "epost+demo@montecarlodata.com",
+        "ruleDescription": "Loan Underwriting Agent — LLM inference call missing",
+        "ruleVariables": null,
+        "createdTime": "2026-05-09T13:26:32.628992+00:00",
+        "lastUpdateTime": "2026-05-09T13:26:32.654543+00:00",
+        "scheduleType": "FIXED",
+        "namespace": "ui",
+        "isTemplateManaged": false,
+        "migratedToUuid": null,
+        "prevExecutionTime": "2026-06-17T05:37:00+00:00",
+        "nextExecutionTime": "2026-06-17T07:37:00+00:00",
+        "isSnoozeable": true,
+        "isSnoozed": false,
+        "isPaused": false,
+        "isTunable": false,
+        "tuningUnavailableReason": "UNSUPPORTED_MONITOR_TYPE",
+        "isDraft": false,
+        "conditionalSnooze": false,
+        "isTransitioningDataProvider": false,
+        "snoozeUntilTime": null,
+        "whereCondition": null,
+        "segmentedExpressions": null,
+        "exceptions": null,
+        "breachRate": "0.0",
+        "historyDays": null,
+        "usePartitionClause": false,
+        "connectionId": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
+        "samplingConfig": null,
+        "filters": null,
+        "notes": "Alerts when ChatBedrockConverse.chat is not called in a trace, meaning the agent completed all tool checks but produced no loan decision. A silent failure with no LLM output must be treated as an incomplete underwriting decision and flagged for immediate review.",
+        "priority": null,
+        "dataQualityDimension": null,
+        "aggTimeInterval": null,
+        "labels": [
+          "Critical"
+        ],
+        "failureAudiences": [
+          "Critical"
+        ],
+        "name": "rule_YKEbTzzc",
+        "description": "Loan Underwriting Agent — LLM inference call missing",
+        "domainUuids": [
+          "e5566b3e-01ce-46e5-9369-e342d8c4c2c6"
+        ],
+        "domains": [
+          {
+            "uuid": "e5566b3e-01ce-46e5-9369-e342d8c4c2c6",
+            "name": "Application",
+            "__typename": "DomainOutput"
+          }
+        ],
+        "agentSpanFilters": null,
+        "comparisons": [
+          {
+            "metric": "agent_trajectory_135d8ac0-b70b-4747-8a8b-a8aa9a32ff92",
+            "field": null,
+            "fields": null,
+            "sourceField": null,
+            "targetField": null,
+            "operator": "GT",
+            "threshold": 0,
+            "isThresholdRelative": null,
+            "lowerThreshold": null,
+            "upperThreshold": null,
+            "comparisonType": "THRESHOLD",
+            "baselineTrailingDays": null,
+            "baselineStart": null,
+            "baselineEnd": null,
+            "numBins": null,
+            "customMetric": null,
+            "__typename": "CustomRuleComparison"
+          }
+        ],
+        "highSegmentCount": null,
+        "minSegmentRowCount": null,
+        "minSegmentRowCountShare": null,
+        "notificationSettings": [
+          {
+            "uuid": "1021e4c2-a9a9-4253-8c1f-b01312be4dd2",
+            "recipients": [
+              "C03QLL59BPZ"
+            ],
+            "recipientsDisplayNames": [
+              "data-incident-alerts"
+            ],
+            "type": "SLACK_V2",
+            "__typename": "AccountNotificationSetting"
+          },
+          {
+            "uuid": "06573aef-5a27-4fe9-87d4-9ae7286f698e",
+            "recipients": [
+              "19:6ed5bff93b5f4e5a8d1068269fafead9@thread.tacv2"
+            ],
+            "recipientsDisplayNames": [
+              "data-platform-alerts"
+            ],
+            "type": "MSTEAMS_V2",
+            "__typename": "AccountNotificationSetting"
+          }
+        ],
+        "dashboards": [],
+        "tags": [],
+        "sevenDaysIncidentCount": 0,
+        "incidentCountHistory": null,
+        "commentsCount": 0,
+        "collectionLagHours": null,
+        "bootstrap": null,
+        "version": null,
+        "timeout": null,
+        "udmType": "RULE",
+        "isAgentTraceAggregation": null,
+        "isAgentConversationAggregation": null,
+        "__typename": "Monitor"
+      }
+    ]
+  }
+}
