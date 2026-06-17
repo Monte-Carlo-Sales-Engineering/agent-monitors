@@ -2,95 +2,95 @@
   "data": {
     "getMonitors": [
       {
-        "uuid": "79f5f225-79da-4a9c-9529-54cfd5c915a3",
+        "uuid": "85a27b4f-8a63-4885-a0d6-f3398b10c86f",
         "target": {
-          "uuid": "b4797f48-be8b-4731-a418-d9a131412140",
-          "dwId": "fe164ca3-1b7f-4c77-b1ba-e802c44eba69",
-          "connectionUuid": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
+          "uuid": "dfaa47ea-9669-4ddc-854f-71dbb8d520cd",
+          "dwId": "d7430fab-7082-436a-80fe-1a8e81dfc9c3",
+          "connectionUuid": "25a96bc6-fda1-47ef-ba3f-ecb6514f4dfd",
           "timeout": null,
           "whereCondition": null,
           "segments": null,
           "dataSource": {
-            "connectionType": "athena",
-            "type": "TABLE",
-            "mcon": "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
+            "connectionType": "databricks-sql-warehouse",
+            "type": "SQL",
+            "sql": "SELECT * FROM `mc_demo`.`agent_traces`.`account_health_agent_trace_unified`",
             "schema": {
               "fields": [
                 {
                   "name": "agent",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "trace_id",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "span_id",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "parent_span_id",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "span_name",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "request_type",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "model_name",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "workflow",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "task",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "start_time",
-                  "mainType": "TEXT",
-                  "type": "varchar",
-                  "tzAware": null,
+                  "mainType": "TIME",
+                  "type": "timestamp",
+                  "tzAware": true,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "end_time",
-                  "mainType": "TEXT",
-                  "type": "varchar",
-                  "tzAware": null,
+                  "mainType": "TIME",
+                  "type": "timestamp",
+                  "tzAware": true,
                   "__typename": "SchemaField"
                 },
                 {
@@ -103,119 +103,98 @@
                 {
                   "name": "status_code",
                   "mainType": "NUMERIC",
-                  "type": "integer",
-                  "tzAware": null,
-                  "__typename": "SchemaField"
-                },
-                {
-                  "name": "status_message",
-                  "mainType": "TEXT",
-                  "type": "varchar",
-                  "tzAware": null,
-                  "__typename": "SchemaField"
-                },
-                {
-                  "name": "exception_type",
-                  "mainType": "TEXT",
-                  "type": "varchar",
-                  "tzAware": null,
-                  "__typename": "SchemaField"
-                },
-                {
-                  "name": "exception_message",
-                  "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "int",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "prompt_tokens",
                   "mainType": "NUMERIC",
-                  "type": "integer",
+                  "type": "int",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "completion_tokens",
                   "mainType": "NUMERIC",
-                  "type": "integer",
+                  "type": "int",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "total_tokens",
                   "mainType": "NUMERIC",
-                  "type": "integer",
+                  "type": "int",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "attr_map",
                   "mainType": "UNKNOWN",
-                  "type": "json",
+                  "type": "struct",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "prompts",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "first_prompt",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "last_prompt",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "full_prompt",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "completions",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "first_completion",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "last_completion",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "full_completion",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "expected_output",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
@@ -228,79 +207,59 @@
                 },
                 {
                   "name": "tool_call_input",
-                  "mainType": "UNKNOWN",
-                  "type": "json",
+                  "mainType": "TEXT",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "tool_call_output",
-                  "mainType": "UNKNOWN",
-                  "type": "json",
+                  "mainType": "TEXT",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "conversation_id",
                   "mainType": "TEXT",
-                  "type": "varchar",
+                  "type": "string",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "resource_attributes",
-                  "mainType": "TEXT",
-                  "type": "varchar",
+                  "mainType": "UNKNOWN",
+                  "type": "struct",
+                  "tzAware": null,
+                  "__typename": "SchemaField"
+                },
+                {
+                  "name": "filenames",
+                  "mainType": "UNKNOWN",
+                  "type": "array",
                   "tzAware": null,
                   "__typename": "SchemaField"
                 },
                 {
                   "name": "ingest_ts",
                   "mainType": "TIME",
-                  "type": "timestamp with time zone",
+                  "type": "timestamp",
                   "tzAware": true,
-                  "__typename": "SchemaField"
-                },
-                {
-                  "name": "intervention_proportionality_score",
-                  "mainType": "NUMERIC",
-                  "type": "DOUBLE",
-                  "tzAware": null,
                   "__typename": "SchemaField"
                 }
               ],
               "__typename": "DataSourceSchema"
             },
-            "__typename": "DataSourceInputTable"
+            "__typename": "DataSourceInputSql"
           },
           "__typename": "ExtendedDataSource"
         },
         "source": null,
         "dataSource": {
-          "uuid": "b4797f48-be8b-4731-a418-d9a131412140",
-          "connectionUuid": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
-          "customSql": null,
-          "transforms": [
-            {
-              "alias": "intervention_proportionality_score",
-              "categories": null,
-              "field": null,
-              "fieldValueRange": {
-                "lowerBound": 1,
-                "upperBound": 5,
-                "__typename": "FieldValueRange"
-              },
-              "function": "custom_prompt",
-              "id": "6ed298e7-09d5-4bda-84a9-61f90dbf117b",
-              "prompt": "You are an expert evaluator for account health intervention recommendations, carefully assessing whether the proposed action is truly proportionate to the full account context.\n\n## Evaluation Context\nThe recommendation is generated by an account-health-agent using a Databricks churn feature store. The goal is to provide a targeted, appropriate intervention for a Customer Success Manager.\n\n## Comprehensive Contextual Factors\nEvaluate the recommendation against these key account signals:\n- Risk Level\n- Churn Score\n- Seat Utilization Label (Tiers: >70% healthy, 40-70% monitor, <40% at-risk, <20% critical)\n- Account Payment Rate\n- Average NPS Score\n\n## Critical Assessment Criteria\n1. Contextual Proportionality: Does the recommendation match the holistic account health signals?\n2. Recommendation Specificity: Does the intervention include a clear point of contact?\n3. Action Clarity: Are there concrete, actionable next steps?\n4. Deadline Inclusion: Is a specific timeline or deadline provided?\n5. Metric Interpretation: If seat_utilization is the primary risk driver AND account_payment_rate is 1.0 AND average_nps_score is above 25, the recommendation MUST NOT recommend emergency executive escalation within 48 hours. A HIGH urgency response under these conditions indicates the agent over-rotated on a single metric while ignoring contradicting signals. This is a scoring failure regardless of how well-written the recommendation is\n\n## Input Context:\n{{prompts}}\n\n## Recommended Intervention:\n{{completions}}\n\nIMPORTANT: Before scoring, check for signal contradiction. If risk_level is HIGH but account_payment_rate equals 1.0 AND average_nps_score is greater than 20, this is a contradicted HIGH risk signal. A recommendation that responds with emergency escalation to a contradicted HIGH risk signal must score 1 or 2, regardless of how specific or well-structured the recommendation text is. The quality of the writing does not compensate for a disproportionate response.\n\n## Scoring Guidelines\n- 5 = Perfectly proportionate intervention; specific, actionable, and holistically aligned with all account signals\n- 4 = Mostly appropriate recommendation with minor contextual misalignments\n- 3 = Partially appropriate recommendation with noticeable gaps or oversights\n- 2 = Inconsistent recommendation that misinterprets key account signals\n- 1 = Completely disproportionate or inappropriate intervention\n\nProvide a detailed rationale for your score, highlighting how the recommendation reflects (or fails to reflect) the nuanced account context.",
-              "outputType": "number",
-              "sqlExpression": null,
-              "modelName": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
-              "modelConnectionId": null,
-              "fieldConfigList": null,
-              "__typename": "Transform"
-            }
-          ],
+          "uuid": "dfaa47ea-9669-4ddc-854f-71dbb8d520cd",
+          "connectionUuid": "25a96bc6-fda1-47ef-ba3f-ecb6514f4dfd",
+          "customSql": "SELECT * FROM `mc_demo`.`agent_traces`.`account_health_agent_trace_unified`",
+          "transforms": [],
           "schema": {
             "fields": [
               {
@@ -309,7 +268,7 @@
                 "name": "agent",
                 "nested": false,
                 "sqlName": "agent",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -319,7 +278,7 @@
                 "name": "trace_id",
                 "nested": false,
                 "sqlName": "trace_id",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -329,7 +288,7 @@
                 "name": "span_id",
                 "nested": false,
                 "sqlName": "span_id",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -339,7 +298,7 @@
                 "name": "parent_span_id",
                 "nested": false,
                 "sqlName": "parent_span_id",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -349,7 +308,7 @@
                 "name": "span_name",
                 "nested": false,
                 "sqlName": "span_name",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -359,7 +318,7 @@
                 "name": "request_type",
                 "nested": false,
                 "sqlName": "request_type",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -369,7 +328,7 @@
                 "name": "model_name",
                 "nested": false,
                 "sqlName": "model_name",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -379,7 +338,7 @@
                 "name": "workflow",
                 "nested": false,
                 "sqlName": "workflow",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -389,28 +348,28 @@
                 "name": "task",
                 "nested": false,
                 "sqlName": "task",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
               {
-                "mainType": "TEXT",
+                "mainType": "TIME",
                 "mode": "NULLABLE",
                 "name": "start_time",
                 "nested": false,
                 "sqlName": "start_time",
-                "type": "varchar",
-                "tzAware": null,
+                "type": "timestamp",
+                "tzAware": true,
                 "__typename": "SchemaField"
               },
               {
-                "mainType": "TEXT",
+                "mainType": "TIME",
                 "mode": "NULLABLE",
                 "name": "end_time",
                 "nested": false,
                 "sqlName": "end_time",
-                "type": "varchar",
-                "tzAware": null,
+                "type": "timestamp",
+                "tzAware": true,
                 "__typename": "SchemaField"
               },
               {
@@ -429,37 +388,7 @@
                 "name": "status_code",
                 "nested": false,
                 "sqlName": "status_code",
-                "type": "integer",
-                "tzAware": null,
-                "__typename": "SchemaField"
-              },
-              {
-                "mainType": "TEXT",
-                "mode": "NULLABLE",
-                "name": "status_message",
-                "nested": false,
-                "sqlName": "status_message",
-                "type": "varchar",
-                "tzAware": null,
-                "__typename": "SchemaField"
-              },
-              {
-                "mainType": "TEXT",
-                "mode": "NULLABLE",
-                "name": "exception_type",
-                "nested": false,
-                "sqlName": "exception_type",
-                "type": "varchar",
-                "tzAware": null,
-                "__typename": "SchemaField"
-              },
-              {
-                "mainType": "TEXT",
-                "mode": "NULLABLE",
-                "name": "exception_message",
-                "nested": false,
-                "sqlName": "exception_message",
-                "type": "varchar",
+                "type": "int",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -469,7 +398,7 @@
                 "name": "prompt_tokens",
                 "nested": false,
                 "sqlName": "prompt_tokens",
-                "type": "integer",
+                "type": "int",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -479,7 +408,7 @@
                 "name": "completion_tokens",
                 "nested": false,
                 "sqlName": "completion_tokens",
-                "type": "integer",
+                "type": "int",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -489,7 +418,7 @@
                 "name": "total_tokens",
                 "nested": false,
                 "sqlName": "total_tokens",
-                "type": "integer",
+                "type": "int",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -499,7 +428,7 @@
                 "name": "attr_map",
                 "nested": false,
                 "sqlName": "attr_map",
-                "type": "json",
+                "type": "struct",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -509,7 +438,7 @@
                 "name": "prompts",
                 "nested": false,
                 "sqlName": "prompts",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -519,7 +448,7 @@
                 "name": "first_prompt",
                 "nested": false,
                 "sqlName": "first_prompt",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -529,7 +458,7 @@
                 "name": "last_prompt",
                 "nested": false,
                 "sqlName": "last_prompt",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -539,7 +468,7 @@
                 "name": "full_prompt",
                 "nested": false,
                 "sqlName": "full_prompt",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -549,7 +478,7 @@
                 "name": "completions",
                 "nested": false,
                 "sqlName": "completions",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -559,7 +488,7 @@
                 "name": "first_completion",
                 "nested": false,
                 "sqlName": "first_completion",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -569,7 +498,7 @@
                 "name": "last_completion",
                 "nested": false,
                 "sqlName": "last_completion",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -579,7 +508,7 @@
                 "name": "full_completion",
                 "nested": false,
                 "sqlName": "full_completion",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -589,7 +518,7 @@
                 "name": "expected_output",
                 "nested": false,
                 "sqlName": "expected_output",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -604,22 +533,22 @@
                 "__typename": "SchemaField"
               },
               {
-                "mainType": "UNKNOWN",
+                "mainType": "TEXT",
                 "mode": "NULLABLE",
                 "name": "tool_call_input",
                 "nested": false,
                 "sqlName": "tool_call_input",
-                "type": "json",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
               {
-                "mainType": "UNKNOWN",
+                "mainType": "TEXT",
                 "mode": "NULLABLE",
                 "name": "tool_call_output",
                 "nested": false,
                 "sqlName": "tool_call_output",
-                "type": "json",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -629,17 +558,27 @@
                 "name": "conversation_id",
                 "nested": false,
                 "sqlName": "conversation_id",
-                "type": "varchar",
+                "type": "string",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
               {
-                "mainType": "TEXT",
+                "mainType": "UNKNOWN",
                 "mode": "NULLABLE",
                 "name": "resource_attributes",
                 "nested": false,
                 "sqlName": "resource_attributes",
-                "type": "varchar",
+                "type": "struct",
+                "tzAware": null,
+                "__typename": "SchemaField"
+              },
+              {
+                "mainType": "UNKNOWN",
+                "mode": "NULLABLE",
+                "name": "filenames",
+                "nested": false,
+                "sqlName": "filenames",
+                "type": "array",
                 "tzAware": null,
                 "__typename": "SchemaField"
               },
@@ -649,64 +588,44 @@
                 "name": "ingest_ts",
                 "nested": false,
                 "sqlName": "ingest_ts",
-                "type": "timestamp with time zone",
+                "type": "timestamp",
                 "tzAware": true,
-                "__typename": "SchemaField"
-              },
-              {
-                "mainType": "NUMERIC",
-                "mode": "NULLABLE",
-                "name": "intervention_proportionality_score",
-                "nested": false,
-                "sqlName": "INTERVENTION_PROPORTIONALITY_SCORE",
-                "type": "DOUBLE",
-                "tzAware": null,
                 "__typename": "SchemaField"
               }
             ],
             "__typename": "DataSourceSchema"
           },
-          "tables": [
-            {
-              "mcon": "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
-              "fullTableId": "awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces",
-              "__typename": "WarehouseTable"
-            }
-          ],
-          "type": "TABLE",
+          "tables": [],
+          "type": "SQL",
           "__typename": "MonitorDataSource"
         },
-        "entities": [
-          "awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces"
-        ],
-        "entityMcons": [
-          "MCON++1a371a1e-42a0-4817-8a25-dc1487a7b0d0++fe164ca3-1b7f-4c77-b1ba-e802c44eba69++external++awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces"
-        ],
+        "entities": [],
+        "entityMcons": [],
         "agentMcon": null,
         "assignedAssetMcons": null,
         "unassignedAssetMcons": null,
-        "monitorType": "AGENT_EVALUATION",
+        "monitorType": "AGENT_METRIC",
         "customSqlRuleType": null,
         "consolidatedMonitorStatus": "ENABLED",
         "breached": "NOT_BREACHED",
         "monitorFields": null,
         "timeBucketed": true,
         "monitorTimeAxisFieldName": "ingest_ts",
-        "monitorTimeAxisFieldType": "timestamp with time zone",
+        "monitorTimeAxisFieldType": "timestamp",
         "monitorTimeAxisTimezone": null,
-        "resourceId": "fe164ca3-1b7f-4c77-b1ba-e802c44eba69",
-        "creatorId": "epost+demo@montecarlodata.com",
-        "updaterId": "epost+demo@montecarlodata.com",
-        "ruleDescription": "Account Health Agent Recommendation Rationalization",
+        "resourceId": "d7430fab-7082-436a-80fe-1a8e81dfc9c3",
+        "creatorId": null,
+        "updaterId": null,
+        "ruleDescription": "Token consumption anomaly for agent: account_health_agent",
         "ruleVariables": null,
-        "createdTime": "2026-06-09T00:24:43.501333+00:00",
-        "lastUpdateTime": "2026-06-12T13:53:26.280222+00:00",
+        "createdTime": "2026-06-12T20:04:51.209896+00:00",
+        "lastUpdateTime": "2026-06-12T20:04:51.209957+00:00",
         "scheduleType": "FIXED",
         "namespace": "ui",
         "isTemplateManaged": false,
         "migratedToUuid": null,
-        "prevExecutionTime": "2026-06-17T06:25:00+00:00",
-        "nextExecutionTime": "2026-06-17T07:25:00+00:00",
+        "prevExecutionTime": "2026-06-17T06:04:39.214061+00:00",
+        "nextExecutionTime": "2026-06-17T07:04:39.214061+00:00",
         "isSnoozeable": false,
         "isSnoozed": false,
         "isPaused": false,
@@ -722,10 +641,10 @@
         "breachRate": null,
         "historyDays": null,
         "usePartitionClause": false,
-        "connectionId": "5641817b-3f99-4774-a5bc-e26ae8cbba78",
+        "connectionId": "25a96bc6-fda1-47ef-ba3f-ecb6514f4dfd",
         "selectedMetrics": null,
         "scheduleConfig": {
-          "startTime": "2026-06-09T02:25:00+00:00",
+          "startTime": "2026-06-12T20:04:39.214061+00:00",
           "scheduleType": "FIXED",
           "intervalMinutes": 60,
           "intervalCrontab": null,
@@ -734,45 +653,36 @@
           "dynamicScheduleMcons": null,
           "__typename": "ScheduleConfigOutput"
         },
-        "samplingConfig": {
-          "count": 200,
-          "percentage": 100,
-          "__typename": "MonitorSamplingConfig"
-        },
+        "samplingConfig": null,
         "filters": null,
         "segmentationType": null,
-        "notes": "This monitor independently evaluates the context gathered from key churn metrics and against the provided recommendation. Key scenarios this monitor is designed to capture are whether or not a single, isolated metric has an outsized effect on the eventual recommendation.",
+        "notes": null,
         "priority": null,
         "dataQualityDimension": null,
         "aggTimeInterval": "HOUR",
-        "labels": [
-          "Databricks"
+        "labels": null,
+        "failureAudiences": null,
+        "name": "auto_token_consumption_account_health_agent",
+        "description": "Token consumption anomaly for agent: account_health_agent",
+        "domainUuids": [
+          "30e934dc-9c51-484d-a56a-ce6e1fef5cdb"
         ],
-        "failureAudiences": [
-          "Databricks"
+        "domains": [
+          {
+            "uuid": "30e934dc-9c51-484d-a56a-ce6e1fef5cdb",
+            "name": "Snowflake",
+            "__typename": "DomainOutput"
+          }
         ],
-        "name": "rule_KZZbkUng",
-        "description": "Account Health Agent Recommendation Rationalization",
-        "domainUuids": [],
-        "domains": [],
         "agentSpanFilters": [
           {
             "agent": {
-              "value": "account-health-agent",
+              "value": "account_health_agent",
               "__typename": "AgentSpanFieldFilter"
             },
-            "spanName": {
-              "value": "generate_recommendation.ChatBedrockConverse.chat",
-              "__typename": "AgentSpanFieldFilter"
-            },
-            "task": {
-              "value": "recommend_action",
-              "__typename": "AgentSpanFieldFilter"
-            },
-            "workflow": {
-              "value": "generate_intervention",
-              "__typename": "AgentSpanFieldFilter"
-            },
+            "spanName": null,
+            "task": null,
+            "workflow": null,
             "__typename": "AgentSpanFilter"
           }
         ],
@@ -781,12 +691,12 @@
             "metric": "numeric_mean",
             "field": null,
             "fields": [
-              "intervention_proportionality_score"
+              "total_tokens"
             ],
             "sourceField": null,
             "targetField": null,
-            "operator": "LT",
-            "threshold": 3.5,
+            "operator": "AUTO",
+            "threshold": null,
             "isThresholdRelative": null,
             "lowerThreshold": null,
             "upperThreshold": null,
@@ -802,193 +712,19 @@
         "highSegmentCount": false,
         "minSegmentRowCount": null,
         "minSegmentRowCountShare": null,
-        "notificationSettings": [
-          {
-            "uuid": "fc0735c1-1fe1-4cc3-b729-4f2135d6c1fa",
-            "recipients": [
-              "C03S6P2C9B3"
-            ],
-            "recipientsDisplayNames": [
-              "data-incidents-databricks"
-            ],
-            "type": "SLACK_V2",
-            "__typename": "AccountNotificationSetting"
-          },
-          {
-            "uuid": "f4eec674-d8c9-4a15-b0c6-e6560265ab87",
-            "recipients": [
-              "19:6ed5bff93b5f4e5a8d1068269fafead9@thread.tacv2"
-            ],
-            "recipientsDisplayNames": [
-              "data-platform-alerts"
-            ],
-            "type": "MSTEAMS_V2",
-            "__typename": "AccountNotificationSetting"
-          }
-        ],
+        "notificationSettings": [],
         "dashboards": [],
         "tags": [],
-        "sevenDaysIncidentCount": 6,
-        "incidentCountHistory": [
-          {
-            "day": "2026-05-19",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-20",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-21",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-22",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-23",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-24",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-25",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-26",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-27",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-28",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-29",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-30",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-05-31",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-01",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-02",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-03",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-04",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-05",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-06",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-07",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-08",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-09",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-10",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-11",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-12",
-            "incidentCount": 1,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-13",
-            "incidentCount": 1,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-14",
-            "incidentCount": 2,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-15",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-16",
-            "incidentCount": 2,
-            "__typename": "IncidentDailyCount"
-          },
-          {
-            "day": "2026-06-17",
-            "incidentCount": 0,
-            "__typename": "IncidentDailyCount"
-          }
-        ],
-        "commentsCount": 2,
+        "sevenDaysIncidentCount": 0,
+        "incidentCountHistory": null,
+        "commentsCount": 0,
         "collectionLagHours": null,
         "bootstrap": null,
         "version": null,
         "timeout": null,
         "udmType": "MONITOR",
-        "isAgentTraceAggregation": null,
-        "isAgentConversationAggregation": false,
+        "isAgentTraceAggregation": true,
+        "isAgentConversationAggregation": null,
         "__typename": "Monitor"
       }
     ]
