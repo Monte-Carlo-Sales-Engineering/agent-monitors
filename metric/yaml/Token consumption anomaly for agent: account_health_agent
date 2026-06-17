@@ -1,0 +1,26 @@
+version: 1
+agent_metric:
+- warehouse: Databricks
+  name: auto_token_consumption_account_health_agent
+  data_source:
+    sql: SELECT * FROM `mc_demo`.`agent_traces`.`account_health_agent_trace_unified`
+  agent_span_filters:
+  - agent:
+      value: account_health_agent
+  alert_conditions:
+  - metric: NUMERIC_MEAN
+    fields:
+    - total_tokens
+    type: threshold
+    operator: AUTO
+  schedule:
+    type: fixed
+    interval_minutes: 60
+    start_time: '2026-06-12T20:04:39.214061+00:00'
+  description: 'Token consumption anomaly for agent: account_health_agent'
+  domains:
+  - Snowflake
+  high_segment_count: false
+  aggregate_by: HOUR
+  time_bucketed: true
+  collection_lag_hours: 0
