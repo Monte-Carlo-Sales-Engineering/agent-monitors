@@ -1,0 +1,48 @@
+version: 1
+agent_trajectory:
+- warehouse: ao-data-store
+  name: rule_YKEbTzzc
+  description: "Loan Underwriting Agent — LLM inference call missing"
+  notes: Alerts when ChatBedrockConverse.chat is not called in a trace, meaning the
+    agent completed all tool checks but produced no loan decision. A silent failure
+    with no LLM output must be treated as an incomplete underwriting decision and
+    flagged for immediate review.
+  audiences:
+  - Critical
+  event_rollup_until_changed: false
+  domains:
+  - Application
+  schedule:
+    type: fixed
+    interval_minutes: 120
+    start_time: '2026-05-09T13:37:00+00:00'
+  data_source:
+    table: awsdatacatalog:mcd-otel-athena-ao-sample-telemetry-db.traces
+  agent_span_alert_condition:
+    conditions:
+    - type: SPAN_OCCURRENCE
+      predicate:
+        name: occurs
+        negated: false
+      span_field:
+        type: SPAN_FIELD
+        span_name:
+          type: LITERAL
+          literal: ChatBedrockConverse.chat
+        workflow:
+          type: LITERAL
+          literal: loan_underwriting
+        task:
+          type: LITERAL
+          literal: evaluate_application
+      comparison_operator: LESS_THAN
+      count: 1
+    operator: AND
+  time_filter:
+    time_field:
+      type: FIELD
+      field: ingest_ts
+    lookback_in_hrs: 1
+  agent_span_filters:
+  - agent:
+      value: loan-underwriting-agent
